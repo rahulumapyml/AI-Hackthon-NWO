@@ -66,10 +66,10 @@
 		936A76C52A2855C0009A6CDA /* NewWorldOrder */ = {
 			isa = PBXGroup;
 			children = (
+				936A76E32A288205009A6CDA /* Service */,
 				936A76C62A2855C0009A6CDA /* AppDelegate.swift */,
 				936A76C82A2855C0009A6CDA /* SceneDelegate.swift */,
 				936A76CA2A2855C0009A6CDA /* ViewController.swift */,
-				936A76E32A288205009A6CDA /* Service */,
 				936A76E12A286188009A6CDA /* Bundle+Extension.swift */,
 				936A76CC2A2855C0009A6CDA /* Main.storyboard */,
 				936A76CF2A2855C2009A6CDA /* Assets.xcassets */,
