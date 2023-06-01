@@ -16,6 +16,8 @@
 		936A76DE2A285E81009A6CDA /* OpenAISwift in Frameworks */ = {isa = PBXBuildFile; productRef = 936A76DD2A285E81009A6CDA /* OpenAISwift */; };
 		936A76E02A285EE2009A6CDA /* OpenAPIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 936A76DF2A285EE2009A6CDA /* OpenAPIManager.swift */; };
 		936A76E22A286188009A6CDA /* Bundle+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 936A76E12A286188009A6CDA /* Bundle+Extension.swift */; };
+		936A76E52A28821F009A6CDA /* SpeechRecognitionService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 936A76E42A28821F009A6CDA /* SpeechRecognitionService.swift */; };
+		936A76E72A28832A009A6CDA /* SpeechRecognitionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 936A76E62A28832A009A6CDA /* SpeechRecognitionManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,6 +31,8 @@
 		936A76D42A2855C2009A6CDA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		936A76DF2A285EE2009A6CDA /* OpenAPIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenAPIManager.swift; sourceTree = "<group>"; };
 		936A76E12A286188009A6CDA /* Bundle+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Bundle+Extension.swift"; sourceTree = "<group>"; };
+		936A76E42A28821F009A6CDA /* SpeechRecognitionService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeechRecognitionService.swift; sourceTree = "<group>"; };
+		936A76E62A28832A009A6CDA /* SpeechRecognitionManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeechRecognitionManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -65,7 +69,7 @@
 				936A76C62A2855C0009A6CDA /* AppDelegate.swift */,
 				936A76C82A2855C0009A6CDA /* SceneDelegate.swift */,
 				936A76CA2A2855C0009A6CDA /* ViewController.swift */,
-				936A76DF2A285EE2009A6CDA /* OpenAPIManager.swift */,
+				936A76E32A288205009A6CDA /* Service */,
 				936A76E12A286188009A6CDA /* Bundle+Extension.swift */,
 				936A76CC2A2855C0009A6CDA /* Main.storyboard */,
 				936A76CF2A2855C2009A6CDA /* Assets.xcassets */,
@@ -73,6 +77,16 @@
 				936A76D42A2855C2009A6CDA /* Info.plist */,
 			);
 			path = NewWorldOrder;
+			sourceTree = "<group>";
+		};
+		936A76E32A288205009A6CDA /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				936A76DF2A285EE2009A6CDA /* OpenAPIManager.swift */,
+				936A76E42A28821F009A6CDA /* SpeechRecognitionService.swift */,
+				936A76E62A28832A009A6CDA /* SpeechRecognitionManager.swift */,
+			);
+			path = Service;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -153,6 +167,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				936A76CB2A2855C0009A6CDA /* ViewController.swift in Sources */,
+				936A76E72A28832A009A6CDA /* SpeechRecognitionManager.swift in Sources */,
+				936A76E52A28821F009A6CDA /* SpeechRecognitionService.swift in Sources */,
 				936A76E22A286188009A6CDA /* Bundle+Extension.swift in Sources */,
 				936A76C72A2855C0009A6CDA /* AppDelegate.swift in Sources */,
 				936A76E02A285EE2009A6CDA /* OpenAPIManager.swift in Sources */,
@@ -307,6 +323,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = NewWorldOrder/Info.plist;
+				INFOPLIST_KEY_NSMicrophoneUsageDescription = "New World Order wants to use Microphone";
 				INFOPLIST_KEY_NSSpeechRecognitionUsageDescription = "New World Order wants to use Speech Recognition";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
@@ -335,6 +352,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = NewWorldOrder/Info.plist;
+				INFOPLIST_KEY_NSMicrophoneUsageDescription = "New World Order wants to use Microphone";
 				INFOPLIST_KEY_NSSpeechRecognitionUsageDescription = "New World Order wants to use Speech Recognition";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
