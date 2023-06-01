@@ -12,6 +12,8 @@ import Speech
 class ViewController: UIViewController {
     let speechRecognitionManager = SpeechRecognitionManager.shared
     let synthesizer = AVSpeechSynthesizer()
+    
+    var speechTask: DispatchWorkItem?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -67,6 +69,13 @@ extension ViewController {
 
 extension ViewController: SpeechRecognitionServiceDelegate {
     func didReceiveTranscribedText(_ text: String) {
-        print(text)
+        speechTask?.cancel()
+        
+        let task = DispatchWorkItem {
+            print(text)
+        }
+        
+        self.speechTask = task
+        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + .seconds(2), execute: task)
     }
 }
