@@ -12,6 +12,15 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         createGradient()
+        
+        OpenAPIManager.shared.getResponse(input: "help me book an appointment for the chest pain") { result in
+            switch result {
+            case .success(let success):
+                print(success)
+            case .failure(let failure):
+                print(failure)
+            }
+        }
     }
     
     func createGradient() {
