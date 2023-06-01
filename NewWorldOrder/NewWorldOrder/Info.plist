@@ -4,6 +4,10 @@
 <dict>
 	<key>GPT Key</key>
 	<string>$(GPT_KEY)</string>
+	<key>UIAppFonts</key>
+	<array>
+		<string>nunito-sans.regular.ttf</string>
+	</array>
 	<key>UIApplicationSceneManifest</key>
 	<dict>
 		<key>UIApplicationSupportsMultipleScenes</key>

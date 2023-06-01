@@ -18,6 +18,9 @@
 		936A76E22A286188009A6CDA /* Bundle+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 936A76E12A286188009A6CDA /* Bundle+Extension.swift */; };
 		936A76E52A28821F009A6CDA /* SpeechRecognitionService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 936A76E42A28821F009A6CDA /* SpeechRecognitionService.swift */; };
 		936A76E72A28832A009A6CDA /* SpeechRecognitionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 936A76E62A28832A009A6CDA /* SpeechRecognitionManager.swift */; };
+		94221EAE2A28A9B600A00575 /* listening.gif in Resources */ = {isa = PBXBuildFile; fileRef = 94221EAD2A28A9B600A00575 /* listening.gif */; };
+		94221EB02A28BC8600A00575 /* nunito-sans.regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 94221EAF2A28BC8600A00575 /* nunito-sans.regular.ttf */; };
+		94221EB62A28C44000A00575 /* UIImageView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94221EB52A28C44000A00575 /* UIImageView+Extension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -33,6 +36,9 @@
 		936A76E12A286188009A6CDA /* Bundle+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Bundle+Extension.swift"; sourceTree = "<group>"; };
 		936A76E42A28821F009A6CDA /* SpeechRecognitionService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeechRecognitionService.swift; sourceTree = "<group>"; };
 		936A76E62A28832A009A6CDA /* SpeechRecognitionManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeechRecognitionManager.swift; sourceTree = "<group>"; };
+		94221EAD2A28A9B600A00575 /* listening.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = listening.gif; sourceTree = "<group>"; };
+		94221EAF2A28BC8600A00575 /* nunito-sans.regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "nunito-sans.regular.ttf"; sourceTree = "<group>"; };
+		94221EB52A28C44000A00575 /* UIImageView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+Extension.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -70,9 +76,9 @@
 				936A76C62A2855C0009A6CDA /* AppDelegate.swift */,
 				936A76C82A2855C0009A6CDA /* SceneDelegate.swift */,
 				936A76CA2A2855C0009A6CDA /* ViewController.swift */,
-				936A76E12A286188009A6CDA /* Bundle+Extension.swift */,
+				94221EB72A28C4AE00A00575 /* Extensions */,
+				94221EB22A28BEAA00A00575 /* Resources */,
 				936A76CC2A2855C0009A6CDA /* Main.storyboard */,
-				936A76CF2A2855C2009A6CDA /* Assets.xcassets */,
 				936A76D12A2855C2009A6CDA /* LaunchScreen.storyboard */,
 				936A76D42A2855C2009A6CDA /* Info.plist */,
 			);
@@ -87,6 +93,41 @@
 				936A76E62A28832A009A6CDA /* SpeechRecognitionManager.swift */,
 			);
 			path = Service;
+			sourceTree = "<group>";
+		};
+		94221EB22A28BEAA00A00575 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				936A76CF2A2855C2009A6CDA /* Assets.xcassets */,
+				94221EB32A28BEC100A00575 /* Fonts */,
+				94221EB42A28BEDA00A00575 /* Gifs */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		94221EB32A28BEC100A00575 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				94221EAF2A28BC8600A00575 /* nunito-sans.regular.ttf */,
+			);
+			path = Fonts;
+			sourceTree = "<group>";
+		};
+		94221EB42A28BEDA00A00575 /* Gifs */ = {
+			isa = PBXGroup;
+			children = (
+				94221EAD2A28A9B600A00575 /* listening.gif */,
+			);
+			path = Gifs;
+			sourceTree = "<group>";
+		};
+		94221EB72A28C4AE00A00575 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				94221EB52A28C44000A00575 /* UIImageView+Extension.swift */,
+				936A76E12A286188009A6CDA /* Bundle+Extension.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -155,6 +196,8 @@
 			files = (
 				936A76D32A2855C2009A6CDA /* LaunchScreen.storyboard in Resources */,
 				936A76D02A2855C2009A6CDA /* Assets.xcassets in Resources */,
+				94221EB02A28BC8600A00575 /* nunito-sans.regular.ttf in Resources */,
+				94221EAE2A28A9B600A00575 /* listening.gif in Resources */,
 				936A76CE2A2855C0009A6CDA /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -168,6 +211,7 @@
 			files = (
 				936A76CB2A2855C0009A6CDA /* ViewController.swift in Sources */,
 				936A76E72A28832A009A6CDA /* SpeechRecognitionManager.swift in Sources */,
+				94221EB62A28C44000A00575 /* UIImageView+Extension.swift in Sources */,
 				936A76E52A28821F009A6CDA /* SpeechRecognitionService.swift in Sources */,
 				936A76E22A286188009A6CDA /* Bundle+Extension.swift in Sources */,
 				936A76C72A2855C0009A6CDA /* AppDelegate.swift in Sources */,
@@ -249,7 +293,7 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				GPT_KEY = "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";
-				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -304,7 +348,7 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				GPT_KEY = "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";
-				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -321,6 +365,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = DF9KA34RDL;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = NewWorldOrder/Info.plist;
 				INFOPLIST_KEY_NSMicrophoneUsageDescription = "New World Order wants to use Microphone";
@@ -350,6 +395,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = DF9KA34RDL;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = NewWorldOrder/Info.plist;
 				INFOPLIST_KEY_NSMicrophoneUsageDescription = "New World Order wants to use Microphone";
