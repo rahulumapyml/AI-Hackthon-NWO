@@ -6,6 +6,7 @@
 	<string>$(GPT_KEY)</string>
 	<key>UIAppFonts</key>
 	<array>
+		<string>nunito-sans.semibold.ttf</string>
 		<string>nunito-sans.regular.ttf</string>
 	</array>
 	<key>UIApplicationSceneManifest</key>

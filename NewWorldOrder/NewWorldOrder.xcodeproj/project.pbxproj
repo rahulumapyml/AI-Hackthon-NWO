@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9330AAE62A28D32D00B12F04 /* nunito-sans.semibold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 936A76EA2A28D2BA009A6CDA /* nunito-sans.semibold.ttf */; };
 		936A76C72A2855C0009A6CDA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 936A76C62A2855C0009A6CDA /* AppDelegate.swift */; };
 		936A76C92A2855C0009A6CDA /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 936A76C82A2855C0009A6CDA /* SceneDelegate.swift */; };
 		936A76CB2A2855C0009A6CDA /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 936A76CA2A2855C0009A6CDA /* ViewController.swift */; };
@@ -18,7 +19,7 @@
 		936A76E22A286188009A6CDA /* Bundle+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 936A76E12A286188009A6CDA /* Bundle+Extension.swift */; };
 		936A76E52A28821F009A6CDA /* SpeechRecognitionService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 936A76E42A28821F009A6CDA /* SpeechRecognitionService.swift */; };
 		936A76E72A28832A009A6CDA /* SpeechRecognitionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 936A76E62A28832A009A6CDA /* SpeechRecognitionManager.swift */; };
-		94221EAE2A28A9B600A00575 /* listening.gif in Resources */ = {isa = PBXBuildFile; fileRef = 94221EAD2A28A9B600A00575 /* listening.gif */; };
+		936A76E92A28CD34009A6CDA /* listening.gif in Resources */ = {isa = PBXBuildFile; fileRef = 936A76E82A28CD34009A6CDA /* listening.gif */; };
 		94221EB02A28BC8600A00575 /* nunito-sans.regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 94221EAF2A28BC8600A00575 /* nunito-sans.regular.ttf */; };
 		94221EB62A28C44000A00575 /* UIImageView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94221EB52A28C44000A00575 /* UIImageView+Extension.swift */; };
 /* End PBXBuildFile section */
@@ -36,7 +37,8 @@
 		936A76E12A286188009A6CDA /* Bundle+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Bundle+Extension.swift"; sourceTree = "<group>"; };
 		936A76E42A28821F009A6CDA /* SpeechRecognitionService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeechRecognitionService.swift; sourceTree = "<group>"; };
 		936A76E62A28832A009A6CDA /* SpeechRecognitionManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeechRecognitionManager.swift; sourceTree = "<group>"; };
-		94221EAD2A28A9B600A00575 /* listening.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = listening.gif; sourceTree = "<group>"; };
+		936A76E82A28CD34009A6CDA /* listening.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = listening.gif; sourceTree = "<group>"; };
+		936A76EA2A28D2BA009A6CDA /* nunito-sans.semibold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "nunito-sans.semibold.ttf"; sourceTree = "<group>"; };
 		94221EAF2A28BC8600A00575 /* nunito-sans.regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "nunito-sans.regular.ttf"; sourceTree = "<group>"; };
 		94221EB52A28C44000A00575 /* UIImageView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+Extension.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -98,9 +100,9 @@
 		94221EB22A28BEAA00A00575 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				936A76E82A28CD34009A6CDA /* listening.gif */,
 				936A76CF2A2855C2009A6CDA /* Assets.xcassets */,
 				94221EB32A28BEC100A00575 /* Fonts */,
-				94221EB42A28BEDA00A00575 /* Gifs */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -108,17 +110,10 @@
 		94221EB32A28BEC100A00575 /* Fonts */ = {
 			isa = PBXGroup;
 			children = (
+				936A76EA2A28D2BA009A6CDA /* nunito-sans.semibold.ttf */,
 				94221EAF2A28BC8600A00575 /* nunito-sans.regular.ttf */,
 			);
 			path = Fonts;
-			sourceTree = "<group>";
-		};
-		94221EB42A28BEDA00A00575 /* Gifs */ = {
-			isa = PBXGroup;
-			children = (
-				94221EAD2A28A9B600A00575 /* listening.gif */,
-			);
-			path = Gifs;
 			sourceTree = "<group>";
 		};
 		94221EB72A28C4AE00A00575 /* Extensions */ = {
@@ -194,10 +189,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				936A76E92A28CD34009A6CDA /* listening.gif in Resources */,
 				936A76D32A2855C2009A6CDA /* LaunchScreen.storyboard in Resources */,
 				936A76D02A2855C2009A6CDA /* Assets.xcassets in Resources */,
 				94221EB02A28BC8600A00575 /* nunito-sans.regular.ttf in Resources */,
-				94221EAE2A28A9B600A00575 /* listening.gif in Resources */,
+				9330AAE62A28D32D00B12F04 /* nunito-sans.semibold.ttf in Resources */,
 				936A76CE2A2855C0009A6CDA /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

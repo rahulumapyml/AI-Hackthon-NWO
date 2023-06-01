@@ -10,34 +10,21 @@ import AVFoundation
 import Speech
 
 class ViewController: UIViewController {
+    @IBOutlet weak var aiImageView: UIImageView!
+    
     let speechRecognitionManager = SpeechRecognitionManager.shared
     let synthesizer = AVSpeechSynthesizer()
     
     var speechTask: DispatchWorkItem?
 
-    var textView: UITextView = {
-        let textView = UITextView()
-        textView.backgroundColor = .clear
-        textView.font = UIFont(name: "NunitoSans-Regular", size: 26)
-        textView.textColor = .white
-        textView.textAlignment = .center
-        return textView
-    }()
-
     override func viewDidLoad() {
         super.viewDidLoad()
         speechRecognitionManager.delegate = self
-
+        
+        aiImageView.animationImages = UIImageView.fromGif(frame:aiImageView.frame , resourceName: "listening")
+        aiImageView.startAnimating()
+        
         createGradient()
-        addImages()
-    }
-
-    func addImages() {
-        guard let confettiImageView = UIImageView.fromGif(frame: CGRect(x: 0, y: 0, width: view.bounds.width, height: 300),
-                                                          resourceName: "listening") else { return }
-        confettiImageView.alpha = 0.5
-        view.addSubview(confettiImageView)
-        confettiImageView.startAnimating()
     }
     
     func promptGPT() {
@@ -67,13 +54,6 @@ class ViewController: UIViewController {
         
         // Add gradient layer to the view's layer
         view.layer.insertSublayer(gradientLayer, at: 0)
-    }
-    
-    
-    @IBAction
-    func audioButtonAction(_ sender: Any) {
-      //  speechRecognitionManager.start()
-        convertToAudio(" Finding more resources You completed this module on SwiftUI and built your first app. Review what you’ve learned, and get ideas about where to go from here.")
     }
     
 }
