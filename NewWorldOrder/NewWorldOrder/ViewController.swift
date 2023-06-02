@@ -8,13 +8,15 @@
 import UIKit
 import AVFoundation
 import Speech
+import Lottie
 
 class ViewController: UIViewController {
-    @IBOutlet private weak var aiImageView: UIImageView!
     @IBOutlet private weak var waveformView: WaveformView!
     @IBOutlet private weak var generativeAIResultLabel: UILabel!
     @IBOutlet private weak var userInputLabel: UILabel!
-    
+    @IBOutlet weak var lottieView: LottieAnimationView!
+    @IBOutlet weak var gifBackgroundView: UIImageView!
+
     private let userName = "Rahul"
     private let speechRecognitionManager = SpeechRecognitionManager.shared
     private let synthesizer = AVSpeechSynthesizer()
@@ -33,6 +35,18 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setup()
+        setUpLottie()
+    
+        gifBackgroundView.animationImages = UIImageView.fromGif(frame: gifBackgroundView.bounds, resourceName: "background")
+        gifBackgroundView.startAnimating()
+    }
+
+    func setUpLottie() {
+        lottieView.contentMode = .scaleAspectFit
+        lottieView.loopMode = .loop
+        lottieView.animationSpeed = 0.5
+        lottieView.backgroundColor = .clear
+        lottieView.play()
     }
     
 }
@@ -51,14 +65,14 @@ extension ViewController {
 private extension ViewController {
     func setup() {
         speechRecognitionManager.delegate = self
+        speechRecognitionManager.start()
         synthesizer.delegate = self
-        
-        aiImageView.animationImages = UIImageView.fromGif(frame:aiImageView.bounds, resourceName: "listening")
-        aiImageView.startAnimating()
-        
+
         generativeAIResultLabel.text = flowType.getInitialDialog(userName)
         convertToAudio(flowType.getInitialDialog(userName))
     }
+
+
     
     func promptGPT(input: String) {
         OpenAPIManager.shared.getResponse(input: input) { result in
@@ -66,8 +80,8 @@ private extension ViewController {
 
             case .success(let text):
                 print(text)
-                DispatchQueue.main.async {
-                    self.convertToAudio("Hello I'm chat gpt speaking. \(Int.random(in: 1...100))")
+                DispatchQueue.main.asyncAfter(deadline: .now() + 4) {
+                    self.convertToAudio(text)
                 }
             case .failure(let failure):
                 print(failure)
@@ -86,12 +100,14 @@ private extension ViewController {
     func updateUI() {
         switch botState {
         case .speaking:
+            lottieView.isHidden = true
             generativeAIResultLabel.isHidden = false
             userInputLabel.isHidden = true
             userInputLabel.text = ""
             waveformView.isHidden = true
             speechRecognitionManager.stop()
         case .listening:
+            lottieView.isHidden = false
             generativeAIResultLabel.isHidden = true
             generativeAIResultLabel.text = ""
             userInputLabel.isHidden = false
@@ -127,9 +143,10 @@ extension ViewController: SpeechRecognitionServiceDelegate {
 
 extension ViewController: AVSpeechSynthesizerDelegate {
     func speechSynthesizer(_ synthesizer: AVSpeechSynthesizer, didFinish utterance: AVSpeechUtterance) {
+        synthesizer.stopSpeaking(at: .immediate)
         botState = .listening
     }
-    
+
     func speechSynthesizer(_ synthesizer: AVSpeechSynthesizer, didStart utterance: AVSpeechUtterance) {
         botState = .speaking
     }

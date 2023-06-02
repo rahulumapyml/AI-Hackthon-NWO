@@ -22,13 +22,13 @@ extension UIImageView {
         
         var images = [UIImage]()
         let imageCount = CGImageSourceGetCount(source)
-        
+
         for i in 0 ..< imageCount {
             if let image = CGImageSourceCreateImageAtIndex(source, i, nil) {
                 images.append(UIImage(cgImage: image))
             }
         }
-        
+
         return images
     }
 }

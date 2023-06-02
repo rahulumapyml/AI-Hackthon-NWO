@@ -25,6 +25,9 @@
 		936A76E92A28CD34009A6CDA /* listening.gif in Resources */ = {isa = PBXBuildFile; fileRef = 936A76E82A28CD34009A6CDA /* listening.gif */; };
 		94221EB02A28BC8600A00575 /* nunito-sans.regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 94221EAF2A28BC8600A00575 /* nunito-sans.regular.ttf */; };
 		94221EB62A28C44000A00575 /* UIImageView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94221EB52A28C44000A00575 /* UIImageView+Extension.swift */; };
+		948EE2122A2A2233005B5AEB /* Lottie in Frameworks */ = {isa = PBXBuildFile; productRef = 948EE2112A2A2233005B5AEB /* Lottie */; };
+		948EE2162A2A25A2005B5AEB /* Comp1.json in Resources */ = {isa = PBXBuildFile; fileRef = 948EE2152A2A25A2005B5AEB /* Comp1.json */; };
+		948EE2182A2A2943005B5AEB /* background.gif in Resources */ = {isa = PBXBuildFile; fileRef = 948EE2172A2A2943005B5AEB /* background.gif */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -47,6 +50,8 @@
 		936A76EA2A28D2BA009A6CDA /* nunito-sans.semibold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "nunito-sans.semibold.ttf"; sourceTree = "<group>"; };
 		94221EAF2A28BC8600A00575 /* nunito-sans.regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "nunito-sans.regular.ttf"; sourceTree = "<group>"; };
 		94221EB52A28C44000A00575 /* UIImageView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+Extension.swift"; sourceTree = "<group>"; };
+		948EE2152A2A25A2005B5AEB /* Comp1.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Comp1.json; sourceTree = "<group>"; };
+		948EE2172A2A2943005B5AEB /* background.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = background.gif; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -55,6 +60,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				936A76DE2A285E81009A6CDA /* OpenAISwift in Frameworks */,
+				948EE2122A2A2233005B5AEB /* Lottie in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -117,6 +123,8 @@
 		94221EB22A28BEAA00A00575 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				948EE2152A2A25A2005B5AEB /* Comp1.json */,
+				948EE2172A2A2943005B5AEB /* background.gif */,
 				936A76E82A28CD34009A6CDA /* listening.gif */,
 				936A76CF2A2855C2009A6CDA /* Assets.xcassets */,
 				94221EB32A28BEC100A00575 /* Fonts */,
@@ -160,6 +168,7 @@
 			name = NewWorldOrder;
 			packageProductDependencies = (
 				936A76DD2A285E81009A6CDA /* OpenAISwift */,
+				948EE2112A2A2233005B5AEB /* Lottie */,
 			);
 			productName = NewWorldOrder;
 			productReference = 936A76C32A2855C0009A6CDA /* NewWorldOrder.app */;
@@ -191,6 +200,7 @@
 			mainGroup = 936A76BA2A2855C0009A6CDA;
 			packageReferences = (
 				936A76DC2A285E81009A6CDA /* XCRemoteSwiftPackageReference "OpenAISwift" */,
+				948EE2102A2A2232005B5AEB /* XCRemoteSwiftPackageReference "lottie-ios" */,
 			);
 			productRefGroup = 936A76C42A2855C0009A6CDA /* Products */;
 			projectDirPath = "";
@@ -208,8 +218,10 @@
 			files = (
 				936A76E92A28CD34009A6CDA /* listening.gif in Resources */,
 				936A76D32A2855C2009A6CDA /* LaunchScreen.storyboard in Resources */,
+				948EE2182A2A2943005B5AEB /* background.gif in Resources */,
 				936A76D02A2855C2009A6CDA /* Assets.xcassets in Resources */,
 				94221EB02A28BC8600A00575 /* nunito-sans.regular.ttf in Resources */,
+				948EE2162A2A25A2005B5AEB /* Comp1.json in Resources */,
 				9330AAE62A28D32D00B12F04 /* nunito-sans.semibold.ttf in Resources */,
 				936A76CE2A2855C0009A6CDA /* Main.storyboard in Resources */,
 			);
@@ -383,7 +395,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = DF9KA34RDL;
 				GENERATE_INFOPLIST_FILE = YES;
-				GPT_KEY = "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";
+				GPT_KEY = "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";
 				INFOPLIST_FILE = NewWorldOrder/Info.plist;
 				INFOPLIST_KEY_NSMicrophoneUsageDescription = "New World Order wants to use Microphone";
 				INFOPLIST_KEY_NSSpeechRecognitionUsageDescription = "New World Order wants to use Speech Recognition";
@@ -414,7 +426,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = DF9KA34RDL;
 				GENERATE_INFOPLIST_FILE = YES;
-				GPT_KEY = "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";
+				GPT_KEY = "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";
 				INFOPLIST_FILE = NewWorldOrder/Info.plist;
 				INFOPLIST_KEY_NSMicrophoneUsageDescription = "New World Order wants to use Microphone";
 				INFOPLIST_KEY_NSSpeechRecognitionUsageDescription = "New World Order wants to use Speech Recognition";
@@ -468,6 +480,14 @@
 				minimumVersion = 1.0.0;
 			};
 		};
+		948EE2102A2A2232005B5AEB /* XCRemoteSwiftPackageReference "lottie-ios" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/airbnb/lottie-ios.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 4.0.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -475,6 +495,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 936A76DC2A285E81009A6CDA /* XCRemoteSwiftPackageReference "OpenAISwift" */;
 			productName = OpenAISwift;
+		};
+		948EE2112A2A2233005B5AEB /* Lottie */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 948EE2102A2A2232005B5AEB /* XCRemoteSwiftPackageReference "lottie-ios" */;
+			productName = Lottie;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
