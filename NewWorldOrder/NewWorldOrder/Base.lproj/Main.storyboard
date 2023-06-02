@@ -14,6 +14,46 @@
         </array>
     </customFonts>
     <scenes>
+        <!--Flow View Controller-->
+        <scene sceneID="oj9-7I-zMo">
+            <objects>
+                <viewController id="gtf-h0-vk9" customClass="FlowViewController" customModule="NewWorldOrder" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="EvC-kn-Oc3">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="Az2-04-f1b">
+                                <rect key="frame" x="0.0" y="59" width="393" height="759"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" id="4dL-uT-Tbc">
+                                        <rect key="frame" x="0.0" y="50" width="393" height="43.666667938232422"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="4dL-uT-Tbc" id="Rge-1Q-vMU">
+                                            <rect key="frame" x="0.0" y="0.0" width="393" height="43.666667938232422"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="gtf-h0-vk9" id="RaC-WH-LHd"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="7wu-3A-gxj"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="7wu-3A-gxj" firstAttribute="trailing" secondItem="Az2-04-f1b" secondAttribute="trailing" id="K80-Sq-ZN3"/>
+                            <constraint firstItem="Az2-04-f1b" firstAttribute="leading" secondItem="7wu-3A-gxj" secondAttribute="leading" id="ZXI-Y6-DHP"/>
+                            <constraint firstItem="Az2-04-f1b" firstAttribute="top" secondItem="7wu-3A-gxj" secondAttribute="top" id="nxa-fa-7yK"/>
+                            <constraint firstItem="7wu-3A-gxj" firstAttribute="bottom" secondItem="Az2-04-f1b" secondAttribute="bottom" id="zRF-bb-pNh"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="KUs-fW-Qqt" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-726" y="38"/>
+        </scene>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
@@ -43,14 +83,14 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="7" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="n6n-Dy-532">
-                                <rect key="frame" x="16" y="639.66666666666663" width="361" height="30.333333333333371"/>
+                                <rect key="frame" x="16" y="667.66666666666663" width="361" height="30.333333333333371"/>
                                 <fontDescription key="fontDescription" name="NunitoSans-Regular" family="Nunito Sans" pointSize="22"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lvA-x5-zPT">
-                                <rect key="frame" x="0.0" y="694" width="393" height="80"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            <view alpha="0.40000000000000002" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lvA-x5-zPT" customClass="WaveformView" customModule="NewWorldOrder" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="722" width="393" height="80"/>
+                                <color key="backgroundColor" systemColor="systemBlueColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="80" id="MG1-3F-VQA"/>
                                 </constraints>
@@ -78,11 +118,14 @@
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="8Le-1k-1ed" secondAttribute="trailing" constant="16" id="iyn-nG-q5w"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="61z-F2-hpC" secondAttribute="trailing" id="nP5-LT-vp1"/>
                             <constraint firstItem="8Le-1k-1ed" firstAttribute="top" secondItem="NOu-sB-NLy" secondAttribute="bottom" constant="16" id="vk6-Fp-MCe"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="lvA-x5-zPT" secondAttribute="bottom" constant="44" id="wXW-Nv-vne"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="lvA-x5-zPT" secondAttribute="bottom" constant="16" id="wXW-Nv-vne"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="aiImageView" destination="NOu-sB-NLy" id="pPm-jK-Pxk"/>
+                        <outlet property="generativeAIResultLabel" destination="8Le-1k-1ed" id="CXm-CD-Azi"/>
+                        <outlet property="userInputLabel" destination="n6n-Dy-532" id="8EU-Xz-8cj"/>
+                        <outlet property="waveformView" destination="lvA-x5-zPT" id="obV-MO-DjM"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

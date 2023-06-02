@@ -5,7 +5,8 @@
 //  Created by Rahul Umap on 01/06/23.
 //
 
-import Foundation
+import UIKit
+import AVFoundation
 
 class SpeechRecognitionManager: SpeechRecognitionServiceLogic {
     var speechRecognizerService: SpeechRecognitionService = SpeechRecognitionService()
@@ -29,5 +30,9 @@ class SpeechRecognitionManager: SpeechRecognitionServiceLogic {
 extension SpeechRecognitionManager: SpeechRecognitionServiceDelegate {
     func didReceiveTranscribedText(_ text: String) {
         delegate?.didReceiveTranscribedText(text)
+    }
+    
+    func processAudioBuffer(_ buffer: AVAudioPCMBuffer) {
+        delegate?.processAudioBuffer(buffer)
     }
 }

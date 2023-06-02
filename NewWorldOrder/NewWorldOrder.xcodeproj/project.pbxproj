@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		9330AAE62A28D32D00B12F04 /* nunito-sans.semibold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 936A76EA2A28D2BA009A6CDA /* nunito-sans.semibold.ttf */; };
+		9330AAE82A29A4ED00B12F04 /* Flow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9330AAE72A29A4ED00B12F04 /* Flow.swift */; };
+		9330AAEA2A29A75400B12F04 /* FlowViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9330AAE92A29A75400B12F04 /* FlowViewController.swift */; };
+		9330AAEC2A29AAFB00B12F04 /* WaveFormView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9330AAEB2A29AAFB00B12F04 /* WaveFormView.swift */; };
 		936A76C72A2855C0009A6CDA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 936A76C62A2855C0009A6CDA /* AppDelegate.swift */; };
 		936A76C92A2855C0009A6CDA /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 936A76C82A2855C0009A6CDA /* SceneDelegate.swift */; };
 		936A76CB2A2855C0009A6CDA /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 936A76CA2A2855C0009A6CDA /* ViewController.swift */; };
@@ -25,6 +28,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		9330AAE72A29A4ED00B12F04 /* Flow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Flow.swift; sourceTree = "<group>"; };
+		9330AAE92A29A75400B12F04 /* FlowViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlowViewController.swift; sourceTree = "<group>"; };
+		9330AAEB2A29AAFB00B12F04 /* WaveFormView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WaveFormView.swift; sourceTree = "<group>"; };
 		936A76C32A2855C0009A6CDA /* NewWorldOrder.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NewWorldOrder.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		936A76C62A2855C0009A6CDA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		936A76C82A2855C0009A6CDA /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -55,6 +61,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		9330AAED2A29AB0500B12F04 /* Subclass */ = {
+			isa = PBXGroup;
+			children = (
+				9330AAEB2A29AAFB00B12F04 /* WaveFormView.swift */,
+			);
+			path = Subclass;
+			sourceTree = "<group>";
+		};
 		936A76BA2A2855C0009A6CDA = {
 			isa = PBXGroup;
 			children = (
@@ -74,10 +88,13 @@
 		936A76C52A2855C0009A6CDA /* NewWorldOrder */ = {
 			isa = PBXGroup;
 			children = (
-				936A76E32A288205009A6CDA /* Service */,
 				936A76C62A2855C0009A6CDA /* AppDelegate.swift */,
 				936A76C82A2855C0009A6CDA /* SceneDelegate.swift */,
 				936A76CA2A2855C0009A6CDA /* ViewController.swift */,
+				9330AAE92A29A75400B12F04 /* FlowViewController.swift */,
+				9330AAE72A29A4ED00B12F04 /* Flow.swift */,
+				936A76E32A288205009A6CDA /* Service */,
+				9330AAED2A29AB0500B12F04 /* Subclass */,
 				94221EB72A28C4AE00A00575 /* Extensions */,
 				94221EB22A28BEAA00A00575 /* Resources */,
 				936A76CC2A2855C0009A6CDA /* Main.storyboard */,
@@ -206,7 +223,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				936A76CB2A2855C0009A6CDA /* ViewController.swift in Sources */,
+				9330AAEC2A29AAFB00B12F04 /* WaveFormView.swift in Sources */,
 				936A76E72A28832A009A6CDA /* SpeechRecognitionManager.swift in Sources */,
+				9330AAEA2A29A75400B12F04 /* FlowViewController.swift in Sources */,
+				9330AAE82A29A4ED00B12F04 /* Flow.swift in Sources */,
 				94221EB62A28C44000A00575 /* UIImageView+Extension.swift in Sources */,
 				936A76E52A28821F009A6CDA /* SpeechRecognitionService.swift in Sources */,
 				936A76E22A286188009A6CDA /* Bundle+Extension.swift in Sources */,
@@ -363,6 +383,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = DF9KA34RDL;
 				GENERATE_INFOPLIST_FILE = YES;
+				GPT_KEY = "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";
 				INFOPLIST_FILE = NewWorldOrder/Info.plist;
 				INFOPLIST_KEY_NSMicrophoneUsageDescription = "New World Order wants to use Microphone";
 				INFOPLIST_KEY_NSSpeechRecognitionUsageDescription = "New World Order wants to use Speech Recognition";
@@ -393,6 +414,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = DF9KA34RDL;
 				GENERATE_INFOPLIST_FILE = YES;
+				GPT_KEY = "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";
 				INFOPLIST_FILE = NewWorldOrder/Info.plist;
 				INFOPLIST_KEY_NSMicrophoneUsageDescription = "New World Order wants to use Microphone";
 				INFOPLIST_KEY_NSSpeechRecognitionUsageDescription = "New World Order wants to use Speech Recognition";

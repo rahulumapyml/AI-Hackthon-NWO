@@ -10,6 +10,7 @@ import Speech
 
 protocol SpeechRecognitionServiceDelegate: AnyObject {
     func didReceiveTranscribedText(_ text: String)
+    func processAudioBuffer(_ buffer: AVAudioPCMBuffer)
 }
 
 protocol SpeechRecognitionServiceLogic: AnyObject {
@@ -70,6 +71,7 @@ class SpeechRecognitionService: NSObject, SpeechRecognitionServiceLogic, SFSpeec
         let recordingFormat = inputNode.outputFormat(forBus: 0)
         inputNode.installTap(onBus: 0, bufferSize: 1024, format: recordingFormat) { (buffer, time) in
             self.recognitionRequest?.append(buffer)
+            self.delegate?.processAudioBuffer(buffer)
         }
         
         // Prepare the audio engine and start recording
