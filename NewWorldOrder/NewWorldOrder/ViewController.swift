@@ -63,8 +63,12 @@ private extension ViewController {
     func promptGPT(input: String) {
         OpenAPIManager.shared.getResponse(input: input) { result in
             switch result {
+
             case .success(let text):
-                self.convertToAudio(text)
+                print(text)
+                DispatchQueue.main.async {
+                    self.convertToAudio("Hello I'm chat gpt speaking. \(Int.random(in: 1...100))")
+                }
             case .failure(let failure):
                 print(failure)
             }
@@ -72,21 +76,24 @@ private extension ViewController {
     }
     
     func convertToAudio(_ text: String) {
+        generativeAIResultLabel.text = text
         let utterance = AVSpeechUtterance(string: text)
         utterance.voice = AVSpeechSynthesisVoice(language: "en-us")
         utterance.rate = 0.45
         synthesizer.speak(utterance)
     }
-    
+
     func updateUI() {
         switch botState {
         case .speaking:
             generativeAIResultLabel.isHidden = false
             userInputLabel.isHidden = true
+            userInputLabel.text = ""
             waveformView.isHidden = true
             speechRecognitionManager.stop()
         case .listening:
             generativeAIResultLabel.isHidden = true
+            generativeAIResultLabel.text = ""
             userInputLabel.isHidden = false
             waveformView.isHidden = false
             speechRecognitionManager.start()

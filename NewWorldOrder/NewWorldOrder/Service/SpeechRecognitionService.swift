@@ -57,7 +57,7 @@ class SpeechRecognitionService: NSObject, SpeechRecognitionServiceLogic, SFSpeec
         
         // Set up the audio session
         let audioSession = AVAudioSession.sharedInstance()
-        try audioSession.setCategory(.record, mode: .measurement, options: .duckOthers)
+        try audioSession.setCategory(.record, mode: .default, options: .mixWithOthers)
         try audioSession.setActive(true, options: .notifyOthersOnDeactivation)
         
         // Create recognition request
@@ -68,7 +68,7 @@ class SpeechRecognitionService: NSObject, SpeechRecognitionServiceLogic, SFSpeec
         let inputNode = audioEngine.inputNode
         
         // Assign the recognition request to the input node's output
-        let recordingFormat = inputNode.outputFormat(forBus: 0)
+        let recordingFormat = inputNode.inputFormat(forBus: 0)
         inputNode.installTap(onBus: 0, bufferSize: 1024, format: recordingFormat) { (buffer, time) in
             self.recognitionRequest?.append(buffer)
             self.delegate?.processAudioBuffer(buffer)
