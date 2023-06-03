@@ -403,7 +403,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = DF9KA34RDL;
 				GENERATE_INFOPLIST_FILE = YES;
-				GPT_KEY = "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";
+				GPT_KEY = Gra4wLH2cA46BtK5YFOyT3BlbkFJ1eqhOtMsLdcqcIGQixUc;
 				INFOPLIST_FILE = NewWorldOrder/Info.plist;
 				INFOPLIST_KEY_NSMicrophoneUsageDescription = "New World Order wants to use Microphone";
 				INFOPLIST_KEY_NSSpeechRecognitionUsageDescription = "New World Order wants to use Speech Recognition";
@@ -412,6 +412,7 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -434,7 +435,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = DF9KA34RDL;
 				GENERATE_INFOPLIST_FILE = YES;
-				GPT_KEY = "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";
+				GPT_KEY = Gra4wLH2cA46BtK5YFOyT3BlbkFJ1eqhOtMsLdcqcIGQixUc;
 				INFOPLIST_FILE = NewWorldOrder/Info.plist;
 				INFOPLIST_KEY_NSMicrophoneUsageDescription = "New World Order wants to use Microphone";
 				INFOPLIST_KEY_NSSpeechRecognitionUsageDescription = "New World Order wants to use Speech Recognition";
@@ -443,6 +444,7 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -492,8 +494,8 @@
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/airbnb/lottie-ios.git";
 			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 4.0.0;
+				kind = exactVersion;
+				version = 4.0.0;
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */
