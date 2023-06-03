@@ -57,7 +57,7 @@ class SpeechRecognitionService: NSObject, SpeechRecognitionServiceLogic, SFSpeec
         
         // Set up the audio session
         let audioSession = AVAudioSession.sharedInstance()
-        try audioSession.setCategory(.record, mode: .default, options: .mixWithOthers)
+        try audioSession.setCategory(.playAndRecord, mode: .default, options: .mixWithOthers)
         try audioSession.setActive(true, options: .notifyOthersOnDeactivation)
         
         // Create recognition request

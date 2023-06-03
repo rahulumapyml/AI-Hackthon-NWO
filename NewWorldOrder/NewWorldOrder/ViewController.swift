@@ -24,7 +24,9 @@ class ViewController: UIViewController {
     
     var flowType: Flow = .normal
     
-    var botState: BotState = .speaking {
+    var globalText = ""
+    
+    var isUserTalking = false {
         didSet {
             DispatchQueue.main.async {
                 self.updateUI()
@@ -39,15 +41,18 @@ class ViewController: UIViewController {
         setup()
     }
     
-}
-
-// MARK: - Nested Types
-
-extension ViewController {
-    enum BotState {
-        case listening
-        case speaking
+    @IBAction
+    func starButtonAction(_ sender: Any) {
+        if isUserTalking {
+            isUserTalking = false
+            speechRecognitionManager.stop()
+            promptGPT(input: globalText)
+        } else {
+            isUserTalking = true
+            speechRecognitionManager.start()
+        }
     }
+    
 }
 
 // MARK: - Private methods
@@ -57,7 +62,6 @@ private extension ViewController {
         setUpLottie()
         speechRecognitionManager.delegate = self
         generativeAIResultLabel.text = flowType.getInitialDialog(userName)
-        speechRecognitionManager.start()
     }
     
     func setUpLottie() {
@@ -72,39 +76,41 @@ private extension ViewController {
     }
 
     func promptGPT(input: String) {
-        botState = .speaking
+        print("!@", input)
 
         OpenAPIManager.shared.getResponse(input: input) { result in
             switch result {
             case .success(let text):
+                
                 DispatchQueue.main.async {
                     self.generativeAIResultLabel.text = text
+                    
                 }
             case .failure(let failure):
                 print(failure)
             }
             
-            self.botState = .listening
         }
     }
     
+    
+    
     func updateUI() {
-        switch botState {
-        case .speaking:
-            lottieView.isHidden = true
-            generativeAIResultLabel.isHidden = false
-            userInputLabel.isHidden = true
-            userInputLabel.text = ""
-            waveformView.isHidden = true
-            speechRecognitionManager.stop()
-        case .listening:
+        
+        if isUserTalking {
             lottieView.isHidden = false
             generativeAIResultLabel.isHidden = true
             generativeAIResultLabel.text = ""
             userInputLabel.isHidden = false
             waveformView.isHidden = false
-            speechRecognitionManager.start()
+        } else {
+            lottieView.isHidden = true
+            generativeAIResultLabel.isHidden = false
+            userInputLabel.isHidden = true
+            userInputLabel.text = ""
+            waveformView.isHidden = true
         }
+        
     }
 }
 
@@ -113,15 +119,7 @@ private extension ViewController {
 extension ViewController: SpeechRecognitionServiceDelegate {
     func didReceiveTranscribedText(_ text: String) {
         userInputLabel.text = text
-
-        speechTask?.cancel()
-
-        let task = DispatchWorkItem { [weak self] in
-            self?.promptGPT(input: text)
-        }
-
-        self.speechTask = task
-        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + .seconds(1), execute: task)
+        globalText = text
     }
     
     func processAudioBuffer(_ buffer: AVAudioPCMBuffer) {
