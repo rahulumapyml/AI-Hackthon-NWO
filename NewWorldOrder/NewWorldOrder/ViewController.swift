@@ -35,8 +35,11 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setup()
+        
         setUpLottie()
-    
+        let gradientView = GradientView(frame: view.bounds)
+        view.addSubview(gradientView)
+        
         gifBackgroundView.animationImages = UIImageView.fromGif(frame: gifBackgroundView.bounds, resourceName: "background")
         gifBackgroundView.startAnimating()
     }
@@ -67,7 +70,7 @@ private extension ViewController {
         speechRecognitionManager.delegate = self
         speechRecognitionManager.start()
         synthesizer.delegate = self
-
+        
         generativeAIResultLabel.text = flowType.getInitialDialog(userName)
         convertToAudio(flowType.getInitialDialog(userName))
     }
@@ -121,16 +124,18 @@ private extension ViewController {
 
 extension ViewController: SpeechRecognitionServiceDelegate {
     func didReceiveTranscribedText(_ text: String) {
-        userInputLabel.text = text
         
-        speechTask?.cancel()
-
-        let task = DispatchWorkItem { [weak self] in
-            self?.promptGPT(input: text)
-        }
-
-        self.speechTask = task
-        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + .seconds(2), execute: task)
+//        let input = text
+//        userInputLabel.text = input
+//
+//        speechTask?.cancel()
+//
+//        let task = DispatchWorkItem { [weak self] in
+//            self?.promptGPT(input: input)
+//        }
+//
+//        self.speechTask = task
+//        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + .seconds(2), execute: task)
     }
     
     func processAudioBuffer(_ buffer: AVAudioPCMBuffer) {
