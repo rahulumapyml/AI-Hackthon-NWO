@@ -15,12 +15,8 @@ final class OpenAPIManager {
     
     private init() {}
     
-    @frozen private enum Constants {
-        static let key = Bundle.main.gptKey
-    }
-    
     func setup() {
-        client = OpenAISwift(authToken: Constants.key)
+        client = OpenAISwift(authToken: "")
     }
     
     func getResponse(input: String,
