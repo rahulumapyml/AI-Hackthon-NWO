@@ -25,7 +25,7 @@ final class OpenAPIManager {
         
         guard !input.isEmpty else { return }
         
-        client?.sendCompletion(with: input, completionHandler: { result in
+        client?.sendCompletion(with: input, maxTokens: 500, completionHandler: { result in
             switch result {
             case .success(let model):
                 let output = model.choices?.first?.text ?? ""
