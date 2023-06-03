@@ -403,7 +403,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = DF9KA34RDL;
 				GENERATE_INFOPLIST_FILE = YES;
-				GPT_KEY = Gra4wLH2cA46BtK5YFOyT3BlbkFJ1eqhOtMsLdcqcIGQixUc;
+				GPT_KEY = "";
 				INFOPLIST_FILE = NewWorldOrder/Info.plist;
 				INFOPLIST_KEY_NSMicrophoneUsageDescription = "New World Order wants to use Microphone";
 				INFOPLIST_KEY_NSSpeechRecognitionUsageDescription = "New World Order wants to use Speech Recognition";
@@ -435,7 +435,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = DF9KA34RDL;
 				GENERATE_INFOPLIST_FILE = YES;
-				GPT_KEY = Gra4wLH2cA46BtK5YFOyT3BlbkFJ1eqhOtMsLdcqcIGQixUc;
+				GPT_KEY = "";
 				INFOPLIST_FILE = NewWorldOrder/Info.plist;
 				INFOPLIST_KEY_NSMicrophoneUsageDescription = "New World Order wants to use Microphone";
 				INFOPLIST_KEY_NSSpeechRecognitionUsageDescription = "New World Order wants to use Speech Recognition";

@@ -16,7 +16,8 @@ final class OpenAPIManager {
     private init() {}
     
     @frozen private enum Constants {
-        static let key = Bundle.main.gptKey
+        // Don't commit API key
+        static let key = "<API Key here>"
     }
     
     func setup() {
