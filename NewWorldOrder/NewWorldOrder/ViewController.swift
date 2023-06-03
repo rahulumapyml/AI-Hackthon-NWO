@@ -9,6 +9,7 @@ import UIKit
 import AVFoundation
 import Speech
 import Lottie
+import OpenAISwift
 
 class ViewController: UIViewController {
     @IBOutlet private weak var waveformView: WaveformView!
@@ -25,6 +26,8 @@ class ViewController: UIViewController {
     
     private var flowType: Flow = .normal
     private var globalText = ""
+    
+    var chats = [ChatMessage]()
     
     var isUserTalking = false {
         didSet {
@@ -43,6 +46,11 @@ class ViewController: UIViewController {
 
         generativeAIResultLabel.text = flowType.getInitialDialog(userName)
         convertToAudio(flowType.getInitialDialog(userName))
+        
+        let message1 = ChatMessage(role: .user, content: Constants.prompt)
+        let message2 = ChatMessage(role: .assistant, content: generativeAIResultLabel.text!)
+        
+        chats = [message1, message2]
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -96,13 +104,21 @@ private extension ViewController {
     }
 
     func promptGPT(input: String) {
-        OpenAPIManager.shared.getResponse(input: input) { result in
+        let userMessage = ChatMessage(role: .user, content: input)
+        chats.append(userMessage)
+        
+        OpenAPIManager.shared.getResponse(messages: chats) { result in
             switch result {
             case .success(let text):
-                 let updatedText = text.trimmingCharacters(in: .whitespacesAndNewlines)
+               
+                let updatedText = text.trimmingCharacters(in: .whitespacesAndNewlines)
+                let aiMessage = ChatMessage(role: .assistant, content: updatedText)
+                self.chats.append(aiMessage)
+                
                 DispatchQueue.main.async {
                     self.convertToAudio(updatedText)
                 }
+                
             case .failure(let failure):
                 print(failure)
             }

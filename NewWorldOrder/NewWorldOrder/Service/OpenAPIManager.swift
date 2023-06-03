@@ -20,20 +20,19 @@ final class OpenAPIManager {
         client = OpenAISwift(authToken: "")
     }
     
-    func getResponse(input: String,
+    func getResponse(messages: [ChatMessage],
                     completion: @escaping (Result<String, Error>) -> Void) {
-        
-        guard !input.isEmpty else { return }
-        
-        client?.sendCompletion(with: input, maxTokens: 500, completionHandler: { result in
+        client?.sendChat(with: messages,
+                         maxTokens: 500,
+                         completionHandler: { result in
             switch result {
-            case .success(let model):
-                let output = model.choices?.first?.text ?? ""
+            case .success(let message):
+                let output = message.choices?.first?.message.content ?? ""
                 completion(.success(output))
             case .failure(let error):
                 completion(.failure(error))
             }
         })
-        
+
     }
 }

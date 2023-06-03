@@ -24,6 +24,7 @@
 		936A76E52A28821F009A6CDA /* SpeechRecognitionService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 936A76E42A28821F009A6CDA /* SpeechRecognitionService.swift */; };
 		936A76E72A28832A009A6CDA /* SpeechRecognitionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 936A76E62A28832A009A6CDA /* SpeechRecognitionManager.swift */; };
 		936A76E92A28CD34009A6CDA /* listening.gif in Resources */ = {isa = PBXBuildFile; fileRef = 936A76E82A28CD34009A6CDA /* listening.gif */; };
+		93FC9E4E2A2B6C5F0063CC05 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93FC9E4D2A2B6C5F0063CC05 /* Constants.swift */; };
 		94221EB02A28BC8600A00575 /* nunito-sans.regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 94221EAF2A28BC8600A00575 /* nunito-sans.regular.ttf */; };
 		94221EB62A28C44000A00575 /* UIImageView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94221EB52A28C44000A00575 /* UIImageView+Extension.swift */; };
 		948EE2122A2A2233005B5AEB /* Lottie in Frameworks */ = {isa = PBXBuildFile; productRef = 948EE2112A2A2233005B5AEB /* Lottie */; };
@@ -50,6 +51,7 @@
 		936A76E62A28832A009A6CDA /* SpeechRecognitionManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeechRecognitionManager.swift; sourceTree = "<group>"; };
 		936A76E82A28CD34009A6CDA /* listening.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = listening.gif; sourceTree = "<group>"; };
 		936A76EA2A28D2BA009A6CDA /* nunito-sans.semibold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "nunito-sans.semibold.ttf"; sourceTree = "<group>"; };
+		93FC9E4D2A2B6C5F0063CC05 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		94221EAF2A28BC8600A00575 /* nunito-sans.regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "nunito-sans.regular.ttf"; sourceTree = "<group>"; };
 		94221EB52A28C44000A00575 /* UIImageView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+Extension.swift"; sourceTree = "<group>"; };
 		948EE2152A2A25A2005B5AEB /* Comp1.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Comp1.json; sourceTree = "<group>"; };
@@ -99,6 +101,7 @@
 				936A76C62A2855C0009A6CDA /* AppDelegate.swift */,
 				936A76C82A2855C0009A6CDA /* SceneDelegate.swift */,
 				936A76CA2A2855C0009A6CDA /* ViewController.swift */,
+				93FC9E4D2A2B6C5F0063CC05 /* Constants.swift */,
 				9330AAE92A29A75400B12F04 /* FlowViewController.swift */,
 				9330AAE72A29A4ED00B12F04 /* Flow.swift */,
 				5805151F2A2A5431001C96E9 /* GradientView.swift */,
@@ -249,6 +252,7 @@
 				936A76C72A2855C0009A6CDA /* AppDelegate.swift in Sources */,
 				936A76E02A285EE2009A6CDA /* OpenAPIManager.swift in Sources */,
 				936A76C92A2855C0009A6CDA /* SceneDelegate.swift in Sources */,
+				93FC9E4E2A2B6C5F0063CC05 /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
