@@ -16,6 +16,7 @@ final class OpenAPIManager {
     private init() {}
     
     func setup() {
+        // Don't commit API key
         client = OpenAISwift(authToken: "")
     }
     
