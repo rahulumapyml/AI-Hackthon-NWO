@@ -125,17 +125,17 @@ private extension ViewController {
 extension ViewController: SpeechRecognitionServiceDelegate {
     func didReceiveTranscribedText(_ text: String) {
         
-//        let input = text
-//        userInputLabel.text = input
-//
-//        speechTask?.cancel()
-//
-//        let task = DispatchWorkItem { [weak self] in
-//            self?.promptGPT(input: input)
-//        }
-//
-//        self.speechTask = task
-//        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + .seconds(2), execute: task)
+        let input = text
+        userInputLabel.text = input
+
+        speechTask?.cancel()
+
+        let task = DispatchWorkItem { [weak self] in
+            self?.promptGPT(input: input)
+        }
+
+        self.speechTask = task
+        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + .seconds(2), execute: task)
     }
     
     func processAudioBuffer(_ buffer: AVAudioPCMBuffer) {
