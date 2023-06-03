@@ -26,30 +26,17 @@ class ViewController: UIViewController {
     
     var botState: BotState = .speaking {
         didSet {
-            updateUI()
+            DispatchQueue.main.async {
+                self.updateUI()
+            }
         }
     }
 
-    // MARK: - ViewController's Lifecyle
+    // MARK: - ViewController's Lifecycle
 
     override func viewDidLoad() {
         super.viewDidLoad()
         setup()
-        
-        setUpLottie()
-        let gradientView = GradientView(frame: view.bounds)
-        view.addSubview(gradientView)
-        
-        gifBackgroundView.animationImages = UIImageView.fromGif(frame: gifBackgroundView.bounds, resourceName: "background")
-        gifBackgroundView.startAnimating()
-    }
-
-    func setUpLottie() {
-        lottieView.contentMode = .scaleAspectFit
-        lottieView.loopMode = .loop
-        lottieView.animationSpeed = 0.5
-        lottieView.backgroundColor = .clear
-        lottieView.play()
     }
     
 }
@@ -67,39 +54,40 @@ extension ViewController {
 
 private extension ViewController {
     func setup() {
+        setUpLottie()
         speechRecognitionManager.delegate = self
-        speechRecognitionManager.start()
-        synthesizer.delegate = self
-        
         generativeAIResultLabel.text = flowType.getInitialDialog(userName)
-        convertToAudio(flowType.getInitialDialog(userName))
+        speechRecognitionManager.start()
+    }
+    
+    func setUpLottie() {
+        lottieView.contentMode = .scaleAspectFit
+        lottieView.loopMode = .loop
+        lottieView.animationSpeed = 0.5
+        lottieView.backgroundColor = .clear
+        lottieView.play()
+        
+        gifBackgroundView.animationImages = UIImageView.fromGif(frame: gifBackgroundView.bounds, resourceName: "background")
+        gifBackgroundView.startAnimating()
     }
 
-
-    
     func promptGPT(input: String) {
+        botState = .speaking
+
         OpenAPIManager.shared.getResponse(input: input) { result in
             switch result {
-
             case .success(let text):
-                print(text)
-                DispatchQueue.main.asyncAfter(deadline: .now() + 4) {
-                    self.convertToAudio(text)
+                DispatchQueue.main.async {
+                    self.generativeAIResultLabel.text = text
                 }
             case .failure(let failure):
                 print(failure)
             }
+            
+            self.botState = .listening
         }
     }
     
-    func convertToAudio(_ text: String) {
-        generativeAIResultLabel.text = text
-        let utterance = AVSpeechUtterance(string: text)
-        utterance.voice = AVSpeechSynthesisVoice(language: "en-us")
-        utterance.rate = 0.45
-        synthesizer.speak(utterance)
-    }
-
     func updateUI() {
         switch botState {
         case .speaking:
@@ -124,35 +112,19 @@ private extension ViewController {
 
 extension ViewController: SpeechRecognitionServiceDelegate {
     func didReceiveTranscribedText(_ text: String) {
-        
-//        let input = text
-//        userInputLabel.text = input
-//
-//        speechTask?.cancel()
-//
-//        let task = DispatchWorkItem { [weak self] in
-//            self?.promptGPT(input: input)
-//        }
-//
-//        self.speechTask = task
-//        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + .seconds(2), execute: task)
+        userInputLabel.text = text
+
+        speechTask?.cancel()
+
+        let task = DispatchWorkItem { [weak self] in
+            self?.promptGPT(input: text)
+        }
+
+        self.speechTask = task
+        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + .seconds(1), execute: task)
     }
     
     func processAudioBuffer(_ buffer: AVAudioPCMBuffer) {
         waveformView.processAudioBuffer(buffer)
-    }
-}
-
-
-// MARK: - AVSpeechSynthesizerDelegate
-
-extension ViewController: AVSpeechSynthesizerDelegate {
-    func speechSynthesizer(_ synthesizer: AVSpeechSynthesizer, didFinish utterance: AVSpeechUtterance) {
-        synthesizer.stopSpeaking(at: .immediate)
-        botState = .listening
-    }
-
-    func speechSynthesizer(_ synthesizer: AVSpeechSynthesizer, didStart utterance: AVSpeechUtterance) {
-        botState = .speaking
     }
 }
