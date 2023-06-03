@@ -38,6 +38,10 @@ class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        generativeAIResultLabel.text = flowType.getInitialDialog(userName)
+        convertToAudio(flowType.getInitialDialog(userName))
+        
         setup()
     }
     
@@ -53,6 +57,10 @@ class ViewController: UIViewController {
         }
     }
     
+    @IBAction
+    func closeButtonAction(_ sender: Any) {
+        self.dismiss(animated: true)
+    }
 }
 
 // MARK: - Private methods
@@ -81,10 +89,9 @@ private extension ViewController {
         OpenAPIManager.shared.getResponse(input: input) { result in
             switch result {
             case .success(let text):
-                
                 DispatchQueue.main.async {
                     self.generativeAIResultLabel.text = text
-                    
+                    self.convertToAudio(text)
                 }
             case .failure(let failure):
                 print(failure)
@@ -93,10 +100,15 @@ private extension ViewController {
         }
     }
     
-    
+    func convertToAudio(_ text: String) {
+        generativeAIResultLabel.text = text
+        let utterance = AVSpeechUtterance(string: text)
+        utterance.voice = AVSpeechSynthesisVoice(language: "en-us")
+        utterance.rate = 0.45
+        synthesizer.speak(utterance)
+    }
     
     func updateUI() {
-        
         if isUserTalking {
             lottieView.isHidden = false
             generativeAIResultLabel.isHidden = true
