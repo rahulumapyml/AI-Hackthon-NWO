@@ -22,8 +22,8 @@ class ViewController: UIViewController {
     private let userName = "Rahul"
     private let speechRecognitionManager = SpeechRecognitionManager.shared
     private let synthesizer = AVSpeechSynthesizer()
-    private var speechTask: DispatchWorkItem?
     
+    private var speechTask: DispatchWorkItem?
     private var flowType: Flow = .normal
     private var globalText = ""
     
@@ -60,6 +60,10 @@ class ViewController: UIViewController {
         synthesizer.stopSpeaking(at: .immediate)
     }
     
+}
+
+// MARK: - IBAction methods
+private extension ViewController {
     @IBAction
     func starButtonAction(_ sender: Any) {
         if isUserTalking {
