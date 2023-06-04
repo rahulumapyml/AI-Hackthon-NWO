@@ -83,6 +83,12 @@ class ViewController: UIViewController {
 
 private extension ViewController {
     func setup() {
+        
+        userInputLabel.layer.cornerRadius = 10.0
+        userInputLabel.layer.masksToBounds = true
+        generativeAIResultLabel.layer.cornerRadius = 10.0
+        generativeAIResultLabel.layer.masksToBounds = true
+        
         setUpLottie()
         isUserTalking = false
         waveformView.backgroundColor = .clear
